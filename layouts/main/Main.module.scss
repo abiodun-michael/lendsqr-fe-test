@@ -1,4 +1,4 @@
-
+@import 'utils/variables';
 
 
 
@@ -6,4 +6,23 @@
     display: grid;
     grid-template-columns: 283px calc(100% - 283px);;
     height: 100vh;
+
+    .content{
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 160px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+
+.page-container{
+    height: 100%;
+
+    .page-container-title{
+        font-size: 1.714rem;
+        color: $secondaryColor;
+        margin-bottom: 40px;
+    }
 }

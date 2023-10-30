@@ -1,0 +1,44 @@
+@import 'utils/variables';
+
+
+.analytic-card-group{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.analytic-card-container{
+    padding: 20px 30px;
+
+
+    .analytics-icon-wrapper{
+        height: 40px;
+        width:40px;
+        border-radius: 50%;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom:14px;
+    }
+
+    .analytics-label{
+        color: $textColor;
+        font-family: $workSansFont;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .analytics-data{
+        color: $secondaryColor;
+        font-family: $workSansFont;
+        font-size: 1.714rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+}

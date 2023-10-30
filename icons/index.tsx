@@ -24,6 +24,10 @@ import UsersIcon from './users'
 import CoinSolidIcon from './coins-solid'
 import TyreIcon from './tyre'
 import LogoutIcon from './logout'
+import UsersOutlineIcon from './users-outline'
+import UserGroupOutlineIcon from './user-group-outline'
+import LoanOutlineIcon from './loan-outline'
+import CoinOutlineIcon from './coin-outline'
 
 
 const Icon = (props:{name:string,width?:string, height?:string})=>{
@@ -108,6 +112,18 @@ const Icon = (props:{name:string,width?:string, height?:string})=>{
                 break;
             case "logout":
                 return <LogoutIcon {...rest}/>
+            case "users-outline":
+                return <UsersOutlineIcon />
+                break;
+            case 'user-group-outline':
+                return <UserGroupOutlineIcon />
+                break;
+            case 'loan-outline':
+                return <LoanOutlineIcon />
+                break;
+            case 'coin-outline':
+                return <CoinOutlineIcon />
+                break;
             default:
                 return ""
         }
