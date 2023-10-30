@@ -1,0 +1,32 @@
+@import 'utils/variables';
+
+.input-wrapper{
+    position: relative;
+  
+    
+    .input-field{
+        border-radius: 5px;
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        background: #FFF;
+        outline:none;
+        height:50px;
+        width: 100%;
+        padding:0px 16px;
+        color: $textColor;
+        font-family: $avenirFont;
+        opacity: 0.6;
+    }
+
+    .password-toggle{
+        position: absolute;
+        right:20px;
+        top:18px;
+        font-size: 0.857rem;
+        font-family: $avenirFont;
+        font-weight:600;
+        letter-spacing: 1.2px;
+        color:$primaryColor;
+        cursor: pointer;
+        user-select: none;
+    }
+}

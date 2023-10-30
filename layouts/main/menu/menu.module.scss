@@ -1,0 +1,72 @@
+@import 'utils/variables';
+
+.menu-group{
+    margin-top:30px;
+
+    .menu-group-title{
+        color: $textColor;
+        font-family: $workSansFont;
+        font-size: 0.857rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        margin-left: 30px;
+    }
+}
+
+.menu{
+    list-style: none;
+
+    li.menu-item{
+        height: 40px;
+        a{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-left:30px;
+            gap:10px;
+            color: $secondaryColor !important;
+            font-family: $workSansFont;
+            font-size: 1.143rem;
+            opacity: 0.4;
+            border-left: 3px solid transparent;
+
+         
+            span{
+            //    margin-bottom: 6px;
+            }
+
+            &:hover{
+                opacity: 1;
+                background-color: rgba(57, 205, 204, 0.06);
+                border-left-color: $primaryColor;
+            }
+        }
+    }
+}
+
+.sidebar-footer{
+    padding-left: 29px;
+    margin-top:60px;
+    padding-top:20px;
+    border-top: 1px solid rgba(33, 63, 125, 0.1);
+    color: $secondaryColor;
+
+    .logout{
+        display: flex;
+        gap:10px;
+        cursor: pointer;
+        font-size: 1.143rem;
+        align-items: center;
+    }
+
+    .version{
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-family: $workSansFont;
+        font-size: 0.857rem;
+    }
+
+}

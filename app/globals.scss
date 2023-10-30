@@ -1,0 +1,35 @@
+@import 'utils/variables';
+
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  font-size: 14px;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: $workSansFont;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img{
+  image-rendering: high-quality;
+}

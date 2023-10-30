@@ -1,0 +1,92 @@
+@import 'utils/variables';
+
+.header{
+    height:100px;
+    background-color: white;
+    box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 22;
+
+    .logo-wrapper{
+        display: flex;
+        gap:168px;
+
+        input{
+            font-family: $workSansFont;
+        }
+
+        .logo{
+            width: 145px;
+            height: 30px;
+            margin-left: 30px;
+        }
+    }
+
+   
+}
+
+.search-wrapper{
+    display: flex;
+    align-items:center;
+}
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    height:100%;
+    padding-right:60px;
+
+    ul{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap:30px;
+
+        li{
+            
+            font-family: $robotoFont;
+            font-size: 1.143rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration-line: underline;
+            color: $secondaryColor;
+
+            a{
+                text-decoration: underline;
+                margin-right: 17px;
+            }
+
+            &.avatar{
+                display: flex;
+                text-decoration: none;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+
+                img{
+                    width: 48px;
+                    height:48px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                .avatar-desc{
+                    display: flex;
+                    align-items: center;
+                    gap:4px;
+                    font-family: $workSansFont;
+                    font-weight: 500;
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+
+
+
+
+.main{
+    display: grid;
+    grid-template-columns: 283px calc(100% - 283px);;
+    height: 100vh;
+}
