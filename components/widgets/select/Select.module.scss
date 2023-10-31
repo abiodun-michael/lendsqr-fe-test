@@ -1,6 +1,10 @@
 @import 'utils/variables';
 
-.input-wrapper{
+
+.select{
+   position: relative;
+
+   .input-wrapper{
     position: relative;
   
     .label{
@@ -30,28 +34,39 @@
             outline-color: $primaryColor;
         }
 
-        &::-webkit-calendar-picker-indicator::after {
-            content:'';
-            display:block;
-            background:url('/calendar.svg') no-repeat;
-            background-size:11%;
-            width:100px;
-            height:100px;
-            position:absolute;
-            transform:translateX(-3%);
-         }
     }
-
-    .password-toggle{
+    .dropdown-icon{
         position: absolute;
-        right:20px;
-        top:18px;
-        font-size: 0.857rem;
-        font-family: $avenirFont;
-        font-weight:600;
-        letter-spacing: 1.2px;
-        color:$primaryColor;
+        right: 20px;
+        bottom:10px;
         cursor: pointer;
-        user-select: none;
     }
 }
+
+.dropdown{
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: 100px;
+
+    .list{
+        padding: 20px;
+        list-style: none;
+        
+
+        .li{
+            color: #545F7D;
+            font-family: $workSansFont;
+            font-size: 14px;
+            font-style: normal;
+            text-transform: none;
+            font-weight: 500;
+            line-height: normal;
+            padding: 5px 0;
+        }
+    }
+}
+  
+}
+
+

@@ -1,0 +1,61 @@
+@import 'utils/variables';
+
+.table{
+    width: 100%;
+    
+    .table-header{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+        gap:35px;
+        
+        .th{
+            flex: 1;
+            color: $textColor;
+            font-family: $workSansFont;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap:10px;
+            position: relative;
+
+            .filter{
+                width: 270px;
+                position: absolute;
+                left: 0;
+                top: 15px;
+            }
+        }
+    }
+
+    .tbody{
+
+        & .trow:not(:last-child){
+            border-bottom:1px solid rgba(33, 63, 125, 0.10);
+        }
+
+        .trow{
+            display: flex;
+            align-items: center;
+            height: 61px;
+            gap:35px;
+
+
+            .tdata{
+                height: 100%;
+                flex:1;
+                display: flex;
+                align-items: center;
+                font-family: $workSansFont;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+    }
+}

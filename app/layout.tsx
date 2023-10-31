@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import 'react-calendar/dist/Calendar.css';
 import './globals.scss'
 
 
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=''/>

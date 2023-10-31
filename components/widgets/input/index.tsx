@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentProps, useState } from 'react'
+import { ComponentProps, useId, useState } from 'react'
 import styles from './input.module.scss'
 
 type InputProps = ComponentProps<'input'> & {
@@ -20,10 +20,13 @@ const TextField = ({label,sx,inputSx,type="text",
 
         const inputType = type === 'password' && hidePassword ? 'password': type === 'password' && !hidePassword ? 'text': type
 
+        const id = useId()
+
     return(
         <div className={styles['input-wrapper']} 
             style={{marginBottom,marginLeft,marginTop,marginRight,...sx}}>
-            <input type={inputType} className={styles['input-field']} style={inputSx} {...rest}/>
+            {label && <label className={styles.label} htmlFor={`textfield-${id}`}>{label}</label>}
+            <input type={inputType}  id={`textfield-${id}`} className={styles['input-field']} style={inputSx} {...rest}/>
             {type === 'password' && <span className={styles['password-toggle']} onClick={()=>setHidePassword(!hidePassword)}>{hidePassword ? 'SHOW':'HIDE'}</span>}
         </div>
     )

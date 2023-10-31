@@ -28,9 +28,15 @@ import UsersOutlineIcon from './users-outline'
 import UserGroupOutlineIcon from './user-group-outline'
 import LoanOutlineIcon from './loan-outline'
 import CoinOutlineIcon from './coin-outline'
+import FilterIcon from './filter'
 
-
-const Icon = (props:{name:string,width?:string, height?:string})=>{
+type Props = {
+    name:string,
+    width?:string,
+    height?:string,
+    onClick?: ()=>void
+}
+const Icon = (props:Props)=>{
 
     const {name, ...rest} = props
     
@@ -113,17 +119,19 @@ const Icon = (props:{name:string,width?:string, height?:string})=>{
             case "logout":
                 return <LogoutIcon {...rest}/>
             case "users-outline":
-                return <UsersOutlineIcon />
+                return <UsersOutlineIcon {...rest}/>
                 break;
             case 'user-group-outline':
-                return <UserGroupOutlineIcon />
+                return <UserGroupOutlineIcon {...rest}/>
                 break;
             case 'loan-outline':
-                return <LoanOutlineIcon />
+                return <LoanOutlineIcon {...rest}/>
                 break;
             case 'coin-outline':
-                return <CoinOutlineIcon />
+                return <CoinOutlineIcon {...rest}/>
                 break;
+            case "filter":
+                return <FilterIcon {...rest}/>
             default:
                 return ""
         }
