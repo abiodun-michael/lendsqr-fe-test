@@ -29,6 +29,10 @@ import UserGroupOutlineIcon from './user-group-outline'
 import LoanOutlineIcon from './loan-outline'
 import CoinOutlineIcon from './coin-outline'
 import FilterIcon from './filter'
+import MoreVerticalIcon from './more-vertical'
+import BlacklistUserIcon from './blacklist'
+import EyeIcon from './eye'
+import ActivateUserIcon from './activate-user'
 
 type Props = {
     name:string,
@@ -132,6 +136,18 @@ const Icon = (props:Props)=>{
                 break;
             case "filter":
                 return <FilterIcon {...rest}/>
+            case 'more-vertical':
+                return <MoreVerticalIcon {...rest}/>
+                break;
+            case 'eye':
+                return <EyeIcon {...rest}/>
+                break;
+            case 'blacklist':
+                return <BlacklistUserIcon {...rest}/>
+                break;
+            case 'activate-user':
+                return <ActivateUserIcon {...rest}/>
+                break;
             default:
                 return ""
         }

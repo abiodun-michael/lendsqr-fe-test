@@ -1,4 +1,4 @@
-
+@import 'utils/variables';
 
 .filter-button-group{
     display: flex;
@@ -6,4 +6,22 @@
     justify-content: space-between;
     margin-top:30px;
     // margin-bottom: 28px;
+}
+
+.table-popup-menu{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+    .popup-list{
+        display: flex;
+        font-family: $workSansFont;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+      }
 }

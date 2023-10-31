@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import styles from './header.module.scss'
 import Icon from '@/icons'
+import Popup from '@/components/popup'
 
 
 const Navigation = ()=>{
@@ -9,7 +10,9 @@ const Navigation = ()=>{
         <nav className={styles.nav}>
             <ul>
                 <li><Link href="#">Docs</Link></li>
-                <li><Icon name='bell' width="26px" height="26px"/></li>
+                <li><Popup icon={{name:"bell", width:"26px", height:"26px"}} width={400} height={200} sx={{top:50}}>
+                    <p>Notification here</p>
+                </Popup></li>
                 <Avatar />
             </ul>
 
@@ -28,7 +31,9 @@ const Avatar = ()=>{
             <img src='/avatar.png' />
             <div className={styles['avatar-desc']}>
                 <span>Adedeji</span>
-                <Icon name='dropdown'/>
+                <Popup icon={{name:"dropdown"}} width={200} height={100} sx={{top:50}}>
+                    <p>Menu here</p>
+                </Popup>
             </div>
         </li>
     )
