@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from "react"
+import { useState, memo } from "react"
 import Popup from "../popup"
 import styles from './user-page.module.scss'
 import Icon from "@/icons"
@@ -19,11 +19,13 @@ const TablePopup:React.FC<TablePopupProps> = ({id, status})=>{
     return(
         <Popup icon={{name:"more-vertical"}}>
             <ul className={styles['table-popup-menu']}>
-                <li className={styles['popup-list']}><Icon name='eye'/><Link href="/dashboard/customers/users">View Details</Link></li>
-                <li className={styles['popup-list']}><Icon name={statusIcon}/><span onClick={()=>{}}>{statusLabel}</span></li>
+                <li className={styles['popup-list']}><Icon name='eye'/><Link href={`/dashboard/customers/users/${id}`}>View Details</Link></li>
+                {
+                    ['blacklisted','inactive','active'].includes(status) && <li className={styles['popup-list']}><Icon name={statusIcon}/><span onClick={()=>{}}>{statusLabel}</span></li>
+                }
             </ul>
         </Popup>
     )
 }
 
-export default TablePopup
+export default memo(TablePopup)

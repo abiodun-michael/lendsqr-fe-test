@@ -1,27 +1,24 @@
 @import 'utils/variables';
+@import 'utils/mixins';
+
 
 .filter-button-group{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexbox(center,space-between);
     margin-top:30px;
-    // margin-bottom: 28px;
 }
 
 .table-popup-menu{
+    @include flexbox(normal, normal, column);
     list-style: none;
-    display: flex;
-    flex-direction: column;
     gap:20px;
 
     .popup-list{
-        display: flex;
+        @include flexbox(center);
         font-family: $workSansFont;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
         gap: 8px;
-        align-items: center;
         cursor: pointer;
       }
 }

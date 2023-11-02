@@ -1,4 +1,6 @@
+import React,{memo} from "react"
 import AnalyticsCard, { AnalyticsCardGroup } from "../analytics-card"
+import { Users } from "@/utils/types"
 
 interface IAnalytics {
     id:number,
@@ -8,35 +10,44 @@ interface IAnalytics {
     bg:string
 }
 
-export const UserAnalytics = ()=>{
+type Props = {
+    users:Users[]
+}
+
+const UserAnalytics:React.FC<Props> = ({users})=>{
+
+    const numberOfActiveUsers = users.filter(el=>el.profile.status === 'active').length
+   
+    const numberOfUserWithSavings = users.filter(el=>Number(el.bankInfo.balance) > 0).length
+    const numberOfUserWithLoans = users.filter(el=>Number(el.employment.loan) > 0).length
 
     const data:IAnalytics[] = [
         {
             id:1,
             label:"Users",
             icon:'users-outline',
-            data:2453,
+            data:users.length,
             bg:'rgba(223, 24, 255, 0.1)'
         },
         {
             id:2,
             label:"Active Users",
             icon:'user-group-outline',
-            data:2453,
+            data:numberOfActiveUsers,
             bg:'rgba(87, 24, 255, 0.1)'
         },
         {
             id:3,
             label:"Users with Loans",
             icon:'loan-outline',
-            data:12453,
+            data:numberOfUserWithLoans,
             bg:'rgba(245, 95, 68, 0.1)'
         },
         {
             id:4,
             label:"Users with Savings",
             icon:'coin-outline',
-            data:102453,
+            data:numberOfUserWithSavings,
             bg:'rgba(255, 51, 102, 0.1)'
         }
 ]
@@ -51,3 +62,5 @@ export const UserAnalytics = ()=>{
         </AnalyticsCardGroup>
     )
 }
+
+export default memo(UserAnalytics)

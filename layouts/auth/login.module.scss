@@ -1,9 +1,14 @@
 @import 'utils/variables';
+@import 'utils/media-queries';
 
 .main{
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr;
+
+    @include mobile{
+        grid-template-columns: 1fr;
+    }
 
         .banner-container{
             .logo{
@@ -17,6 +22,10 @@
                 width:600px;
                 height:338px;
             }
+
+            @include mobile{
+                display: none;
+            }
         }
 
         .form-container{
@@ -25,6 +34,12 @@
             padding-left:100px;
             padding-top:220px;
             padding-right:157px;
+
+            @include mobile{
+                padding-top: 100px;
+                padding-left: 20px;
+                padding-right:20px;
+            }
 
             .title{
                 font-family: $avenirFont;

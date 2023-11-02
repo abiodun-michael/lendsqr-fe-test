@@ -1,11 +1,12 @@
 @import 'utils/variables';
+@import 'utils/mixins';
+
 
 .table{
     width: 100%;
     
     .table-header{
-        display: flex;
-        align-items: center;
+        @include flexbox(center);
         width: 100%;
         margin-bottom: 15px;
         gap:35px;
@@ -14,14 +15,13 @@
             flex: 1;
             color: $textColor;
             font-family: $workSansFont;
-            font-size: 12px;
+            font-size: 0.857rem;
             font-style: normal;
             font-weight: 600;
             line-height: normal;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap:10px;
+            @include flexbox(center);
+            gap:8px;
             position: relative;
 
             .filter{
@@ -41,21 +41,25 @@
         }
 
         .trow{
-            display: flex;
-            align-items: center;
+            @include flexbox(center);
             height: 61px;
             gap:35px;
 
 
             .tdata{
+                @include flexbox(center);
                 height: 100%;
                 flex:1;
-                display: flex;
-                align-items: center;
                 font-family: $workSansFont;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
+
+                &.ellipsis{
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
             }
         }
     }

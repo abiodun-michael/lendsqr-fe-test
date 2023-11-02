@@ -33,6 +33,9 @@ import MoreVerticalIcon from './more-vertical'
 import BlacklistUserIcon from './blacklist'
 import EyeIcon from './eye'
 import ActivateUserIcon from './activate-user'
+import ArrowLeftIcon from './arrow-left'
+import FilledStarsIcon from './filled-stars'
+import UnfilledStarsIcon from './unfilled-stars'
 
 type Props = {
     name:string,
@@ -147,6 +150,15 @@ const Icon = (props:Props)=>{
                 break;
             case 'activate-user':
                 return <ActivateUserIcon {...rest}/>
+                break;
+            case 'arrow-left':
+                return <ArrowLeftIcon {...rest}/>
+                break;
+            case 'filled-star':
+                return<FilledStarsIcon {...rest}/>
+                break;
+            case 'unfilled-star':
+                return <UnfilledStarsIcon {...rest}/>
                 break;
             default:
                 return ""

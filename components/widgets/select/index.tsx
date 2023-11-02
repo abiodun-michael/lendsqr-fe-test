@@ -10,14 +10,14 @@ type Data = {
     label:string
 }
 
-type SelectProps = ComponentProps<"input"> & {
+type SelectProps = ComponentProps<"select"> & {
     inputSx?:React.CSSProperties,
     data: Data[],
     label?:string,
     sx?:React.CSSProperties
 }
 
-const Select:React.FC<SelectProps> = ({data,label,inputSx,...rest})=>{
+const Select:React.FC<SelectProps> = ({data,label,inputSx,placeholder,...rest})=>{
 
     const [open, setOpen] = useState(false)
 
@@ -33,8 +33,14 @@ const Select:React.FC<SelectProps> = ({data,label,inputSx,...rest})=>{
         <div className={styles.select}>
             <div className={styles['input-wrapper']}>
                 {label && <label className={styles.label} htmlFor={`textfield-${id}`}>{label}</label>}
-                <input type='text' readOnly  id={`textfield-${id}`} className={styles['input-field']} style={inputSx} {...rest}/>
-                <div className={styles['dropdown-icon']}><Icon name='chevron-down' width='14px' height='14px' onClick={()=>setOpen(!open)}/></div>
+                <select  id={`textfield-${id}`} className={styles['input-field']} style={inputSx} {...rest}>
+                    <option value="" selected>{placeholder}</option>
+                    {
+                        data?.map(({value,label})=>(
+                            <option key={value} value={value}>{label}</option>
+                        ))
+                    }
+                </select>
             </div>
             <CSSTransition
                 in={open}

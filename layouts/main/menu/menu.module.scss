@@ -1,4 +1,11 @@
 @import 'utils/variables';
+@import 'utils/mixins';
+
+
+%align-flex{
+    display: flex;
+    align-items: center;
+}
 
 .menu-group{
     margin-top:30px;
@@ -21,9 +28,9 @@
 
     li.menu-item{
         height: 40px;
+        
         a{
-            display: flex;
-            align-items: center;
+            @extend %align-flex;
             height: 100%;
             padding-left:30px;
             gap:10px;
@@ -32,11 +39,6 @@
             font-size: 1.143rem;
             opacity: 0.4;
             border-left: 3px solid transparent;
-
-         
-            span{
-            //    margin-bottom: 6px;
-            }
 
             &:hover{
                 opacity: 1;
@@ -55,11 +57,10 @@
     color: $secondaryColor;
 
     .logout{
-        display: flex;
         gap:10px;
         cursor: pointer;
         font-size: 1.143rem;
-        align-items: center;
+        @extend %align-flex;
     }
 
     .version{

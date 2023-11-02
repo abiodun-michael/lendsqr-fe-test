@@ -3,17 +3,22 @@
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
 import { Button, TextField } from "../widgets"
 import styles from './user-page.module.scss'
-import { useState } from "react"
+import React, { useEffect, useState } from "react"
 import DateField from "../widgets/date/Index"
 import Select from "../widgets/select"
+import { Users } from "@/utils/types"
 
 const inputStyle = {height:40, borderRadius:8,outline:0, borderWidth:1}
 const buttonStyle = {width:98, height:40, borderRadius:8}
 
 
+type Props = {users:Users[]}
 
-export const OrganizationFilter = ()=>{
+
+export const OrganizationFilter:React.FC<Props> = ({users})=>{
     const [state, setState] = useState("")
+
+    const options = users.map((user)=>({label:user.profile.company,value:user.profile.company.toLocaleLowerCase()}))
 
     const router = useRouter();
     const pathname = usePathname();
@@ -48,6 +53,11 @@ export const OrganizationFilter = ()=>{
         setState("")
     }
 
+    useEffect(()=>{
+        const organization = decodeURIComponent(searchParams.get("organization") || '')
+        setState(organization)
+    },[])
+
 
     return (
         <>
@@ -56,6 +66,7 @@ export const OrganizationFilter = ()=>{
             placeholder="Organization" 
             label="Organization"
             value={state}
+            data={options}
             onChange={(e)=>setState(e.target.value)}
         />
 
@@ -103,6 +114,11 @@ export const UsernameFilter = ()=>{
 
         setState("")
     }
+
+    useEffect(()=>{
+        const username = decodeURIComponent(searchParams.get("username") || '')
+        setState(username)
+    },[])
 
     return (
         <>
@@ -156,6 +172,11 @@ export const EmailFilter = ()=>{
         setState("")
     }
 
+    useEffect(()=>{
+        const email = decodeURIComponent(searchParams.get("email") || '')
+        setState(email)
+    },[])
+
     return (
         <>
         <TextField inputSx={inputStyle}
@@ -183,9 +204,9 @@ export const PhoneNumberFilter = ()=>{
         const current = new URLSearchParams(Array.from(searchParams.entries())); // -> has to use this form
         
         if (!state) {
-            current.delete("date");
+            current.delete("phone");
         } else {
-            current.set("date", state);
+            current.set("phone", state);
         }
         
         const search = current.toString();
@@ -198,7 +219,7 @@ export const PhoneNumberFilter = ()=>{
     const handleReset = ()=>{
         const current = new URLSearchParams(Array.from(searchParams.entries())); // -> has to use this form
         
-        current.delete("date");
+        current.delete("phone");
 
         const search = current.toString();
         const query = search ? `?${search}` : "";
@@ -207,11 +228,19 @@ export const PhoneNumberFilter = ()=>{
 
         setState("")
     }
+
+    useEffect(()=>{
+        const phoneNumber = decodeURIComponent(searchParams.get("phone") || '')
+        setState(phoneNumber)
+    },[])
+
+
     return (
         <>
         <TextField inputSx={inputStyle}
-            placeholder="Date" 
-            label="Date"
+            placeholder="Phone Number" 
+            label="Phone Number"
+            type="tel"
             value={state}
             onChange={(e)=>setState(e.target.value)}
         />
@@ -258,6 +287,11 @@ export const DateJoinedFilter = ()=>{
 
         setState("")
     }
+
+    useEffect(()=>{
+        const date = decodeURIComponent(searchParams.get("date") || '')
+        setState(date)
+    },[])
 
     return (
         <>
@@ -311,12 +345,25 @@ export const StatusFilter = ()=>{
         setState("")
     }
 
+    const options = [
+        {label:"Blacklisted", value:'blacklisted'},
+        {label:"Active", value:'active'},
+        {label:"Inactive", value:'inactive'},
+        {label:"Pending", value:'pending'}
+    ]
+
+    useEffect(()=>{
+        const status = decodeURIComponent(searchParams.get("status") || '')
+        setState(status)
+    },[])
+
     return (
         <>
-        <TextField inputSx={inputStyle}
+        <Select inputSx={inputStyle}
             placeholder="Status" 
             label="Status"
             value={state}
+            data={options}
             onChange={(e)=>setState(e.target.value)}
         />
            <div className={styles['filter-button-group']}>

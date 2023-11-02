@@ -2,7 +2,7 @@ import styles from './Status.module.scss'
 
 type StatusProps = {
     label:string,
-    type: 'inactive' | 'active' | 'blacklisted' | 'pending'
+    type: string
 }
 
 

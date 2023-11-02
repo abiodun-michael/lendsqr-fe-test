@@ -1,6 +1,9 @@
+'use client'
+
 import Icon from "@/icons"
 import Card from "../card"
 import styles from './analytics-card.module.scss'
+import useScreenSize from "@/hooks/use-screen-size"
 
 type AnalyticsCardProps = {
     bg:string,
@@ -11,8 +14,12 @@ type AnalyticsCardProps = {
 
 const AnalyticsCard = ({bg,icon,label,data}:AnalyticsCardProps)=>{
 
+    const {width} = useScreenSize()
+
+    const cardWidth = width > 480 ? 240:160
+
     return(
-        <Card sx={{width:"240px", height:"160px"}}>
+        <Card sx={{width:cardWidth, height:"160px"}}>
             <div className={styles['analytic-card-container']}>
                 <div className={styles['analytics-icon-wrapper']} style={{backgroundColor:bg}}>
                     <Icon name={icon}/>

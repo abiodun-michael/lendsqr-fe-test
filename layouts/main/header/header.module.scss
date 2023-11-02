@@ -1,4 +1,11 @@
 @import 'utils/variables';
+@import 'utils/media-queries';
+
+
+%align-flex{
+    display:flex;
+    align-items: center;
+}
 
 .header{
     height:100px;
@@ -8,8 +15,13 @@
     left:0;
     right:0;
     top:0;
-    display: flex;
-    align-items: center;
+
+    @include mobile{
+        height: 70px;
+    }
+
+
+    @extend %align-flex;
     justify-content: space-between;
     z-index: 22;
 
@@ -25,6 +37,12 @@
             width: 145px;
             height: 30px;
             margin-left: 30px;
+
+            @include mobile{
+                height: auto;
+                width: 100px;
+                margin-left: 20px;
+            }
         }
     }
 
@@ -32,22 +50,27 @@
 }
 
 .search-wrapper{
-    display: flex;
-    align-items:center;
+    @extend %align-flex;
+
+    @include mobile{
+        display: none;
+    }
 }
 
 
 .nav{
-    display: flex;
-    align-items: center;
+    @extend %align-flex;
     height:100%;
     padding-right:60px;
 
     ul{
-        display: flex;
-        align-items: center;
+        @extend %align-flex;
         list-style: none;
         gap:30px;
+
+        @include mobile{
+            display: none;
+        }
 
         li{
             
@@ -65,9 +88,8 @@
             }
 
             &.avatar{
-                display: flex;
+                @extend %align-flex;
                 text-decoration: none;
-                align-items: center;
                 gap: 10px;
                 cursor: pointer;
 
@@ -79,8 +101,7 @@
                 }
 
                 .avatar-desc{
-                    display: flex;
-                    align-items: center;
+                    @extend %align-flex;
                     gap:4px;
                     font-family: $workSansFont;
                     font-weight: 500;

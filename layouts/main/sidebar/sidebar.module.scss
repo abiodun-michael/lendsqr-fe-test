@@ -1,4 +1,6 @@
 @import 'utils/variables';
+@import 'utils/media-queries';
+
 
 .sidebar{
     height: 100%;
@@ -7,6 +9,16 @@
     padding-top:100px;
     overflow-y: auto;
 
+    @include mobile{
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      z-index: 1;
+      transform: translateX(-100%);
+      transition: transform 350ms ease-in-out;
+  }
 
     &::-webkit-scrollbar {
         width: thin;
