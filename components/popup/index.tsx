@@ -28,11 +28,11 @@ const Popup:React.FC<PopupProps> = ({icon,width=180, height, sx, onOpen=()=>{}, 
 
     const [open, setOpen] = useState(false)
 
-    const ref = useRef(null)
+    const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         const handleClickOutside = (event: { target: any }) => {
-          if (ref.current && !ref.current.contains(event.target)) {
+          if (ref.current && !ref.current?.contains(event.target)) {
             setOpen(false);
           }
         };
