@@ -1,6 +1,6 @@
 # Lendsqr FE Test
 
-This is a frontend assessment for frontend role at Lendsqr.
+This is a frontend assessment for the frontend role at Lendsqr.
 
 <a href="https://abiodun-michael-lendsqr-fe-test.vercel.app/">Live Demo</a>
 
@@ -10,9 +10,9 @@ React, NextJs, TypeScript, SCSS
 
 ## Reason for Stack:
 
-The instruction manual for the role specifically mentioned that React, TypeScript and SCSS be used. However, React have gone through many improvement and they now recommened NextJS as a go-to framework ontop of their amazing library for ease of development, routing, enforcement of styles, SEO and SSR. I used the latest version of both React and NextJs while adhering to best practices.
+The instruction manual for the role specifically mentioned that React, TypeScript, and SCSS be used. However, React has gone through many improvements and they now recommended NextJS as a go-to framework on top of their amazing library for ease of development, routing, enforcement of styles, SEO, and SSR. I used the latest version of both React and NextJs while adhering to best practices.
 
-Refer to React's recomendation manual using the following link:
+Refer to React's recommendation manual using the following link:
 https://react.dev/learn/start-a-new-react-project
 
 
