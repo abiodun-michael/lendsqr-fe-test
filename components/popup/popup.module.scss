@@ -2,6 +2,7 @@
 
 .popup{
    position: relative;
+   z-index: 222222;
 
    .popup-container{
       padding:20px;
@@ -12,7 +13,6 @@
       box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
       position: absolute;
       top: 0;
-      right: -10px;
-      z-index: 22;
+      z-index: 9999999;
    }
 }

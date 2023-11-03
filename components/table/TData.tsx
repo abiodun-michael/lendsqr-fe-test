@@ -4,13 +4,14 @@ import styles from './Table.module.scss'
 
 type Props = PropsWithChildren<{}> & {
     sx?:React.CSSProperties,
-    ellipsis?:boolean
+    ellipsis?:boolean,
+    width?:string
 }
 
-const TData:React.FC<Props> = ({children,sx,ellipsis=false})=>{
+const TData:React.FC<Props> = ({children,width,sx,ellipsis=false})=>{
 
     return(
-        <div className={`${styles.tdata} ${ellipsis ? styles['ellipsis']:''}`} style={sx}>
+        <div className={`${styles.tdata} ${ellipsis ? styles['ellipsis']:''}`} style={{...sx, minWidth:width}}>
             {children}
         </div>
     )

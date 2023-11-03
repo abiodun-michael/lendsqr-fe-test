@@ -22,3 +22,18 @@
         cursor: pointer;
       }
 }
+
+
+.user-list-table{
+    // table-layout: fixed;
+    
+    width: 100%;
+}
+
+
+.table-header-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }

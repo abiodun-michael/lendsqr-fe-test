@@ -1,3 +1,5 @@
+'use client'
+
 import { Menu, MenuGroup, MenuItem } from '../menu'
 import { LogoutMenuItem } from '../menu/MenuItem'
 import styles from './Sidebar.module.scss'
@@ -8,11 +10,13 @@ const Sidebar = ()=>{
     return(
         <aside className={styles.sidebar}>
             <Menu>
+                <MenuItem icon="briefcase" label='Switch Organization'  dropdownItem={<></>}
+                sx={{marginTop:39, marginBottom:52}}/>
                 <MenuItem icon="home" label='Dashboard'/>
             </Menu>
             <MenuGroup title='Customers'>
                 <Menu>
-                    <MenuItem icon="user-friend" label='Users'/>
+                    <MenuItem icon="user-friend" label='Users' target='/customers/users'/>
                     <MenuItem icon="user" label='Guarantors'/>
                     <MenuItem icon="sack" label='Loans'/>
                     <MenuItem icon="handshake" label='Decision Models'/>

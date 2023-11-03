@@ -17,7 +17,7 @@ const TablePopup:React.FC<TablePopupProps> = ({id, status})=>{
 
 
     return(
-        <Popup icon={{name:"more-vertical"}}>
+        <Popup position="right" icon={{name:"more-vertical"}}>
             <ul className={styles['table-popup-menu']}>
                 <li className={styles['popup-list']}><Icon name='eye'/><Link href={`/customers/users/${id}`}>View Details</Link></li>
                 {

@@ -20,11 +20,12 @@ type PopupProps = PropsWithChildren <any> & {
   onClose?:()=>void,
   width?:number | string,
   height?: number | string,
-  sx?:React.CSSProperties
+  sx?:React.CSSProperties,
+  position?:string
 }
 
 
-const Popup:React.FC<PopupProps> = ({icon,width=180, height, sx, onOpen=()=>{}, onClose=()=>{}, children})=>{
+const Popup:React.FC<PopupProps> = ({icon,width=180, height, sx,position='left', onOpen=()=>{}, onClose=()=>{}, children})=>{
 
     const [open, setOpen] = useState(false)
 
@@ -50,6 +51,8 @@ const Popup:React.FC<PopupProps> = ({icon,width=180, height, sx, onOpen=()=>{}, 
         }
       },[open])
 
+      const popupPosition = position === 'left' ? {left:'-10px'}: position === 'right' ? {right:'-10px'}:{}
+
     return(
         <div className={styles.popup}>
             <span onClick={()=>setOpen(true)}><Icon name={icon.name} width={icon.width || 20} height={icon.height || 20}/></span>
@@ -60,7 +63,7 @@ const Popup:React.FC<PopupProps> = ({icon,width=180, height, sx, onOpen=()=>{}, 
                 classNames="tbl"
                 onExited={()=>setOpen(false)}
                 unmountOnExit>
-                 <div ref={ref} className={styles['popup-container']} style={{...sx, width, height}}>
+                 <div ref={ref} className={styles['popup-container']} style={{...sx, width, height, ...popupPosition}}>
                   {children}
                 </div>
             </CSSTransition>

@@ -38,7 +38,7 @@ const UserDetailsPage = ()=>{
         }else{
             router.back()
         }
-   },[user])
+   },[])
 
     return(
         <div className={styles['user-details-container']}>

@@ -12,6 +12,7 @@ import TablePopup from "./TablePopup"
 import { Users } from "@/utils/types"
 import React,{memo} from "react"
 import moment from "moment"
+import styles from './UserPage.module.scss'
 
 type Props = {
     users: Users[]
@@ -21,43 +22,53 @@ const UserList:React.FC<Props> = ({users})=>{
 
     const {width} = useScreenSize()
 
-    const isOverflow = width <= 480 ? 'auto':'visible'
-
     return(
-        <Card sx={{padding:'30px', marginTop:40, overflowX:isOverflow}}>
-            <Table>
-                <THead>
-                    <Th
-                        renderFilter={<OrganizationFilter users={users}/>}>organization</Th>
-                    <Th
-                        renderFilter={<UsernameFilter />}>Username</Th>
-                    <Th
-                        renderFilter={<EmailFilter />}>Email</Th>
-                    <Th
-                        renderFilter={<PhoneNumberFilter />}>Phone number</Th>
-                    <Th
-                        renderFilter={<DateJoinedFilter />}>Date joined</Th>
-                    <Th
-                        renderFilter={<StatusFilter />}>Status</Th>
-                        <Th sx={{flex:0.2}}></Th>
-                </THead>
-                <TBody>
+        <Card sx={{padding:'30px', marginTop:40, overflowX:'auto', width:'100%'}}>
+            <table className={styles['user-list-table']}>
+                <thead>
+                    <tr>
+                    <th><div className={styles['table-header-container']}>organization <OrganizationFilter users={users}/></div></th>
+                    <th><div className={styles['table-header-container']}>Username <UsernameFilter /></div></th>
+                    <th><div className={styles['table-header-container']}>Email <EmailFilter /></div></th>
+                    <th><div className={styles['table-header-container']}>Phone number <PhoneNumberFilter /></div></th>
+                    <th><div className={styles['table-header-container']}>Date joined <DateJoinedFilter /></div></th>
+                    <th><div className={styles['table-header-container']}>Status <StatusFilter /></div></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                {
+                        users?.map(({id, profile, createdAt})=>(
+                            <tr key={id}>
+                                <td>{profile.company}</td>
+                                <td>{profile.username}</td>
+                                <td width="250px">{profile.email}</td>
+                                <td width="150px">{profile.phoneNumber}</td>
+                                <td width="120px">{moment(createdAt).format('DD-MM-YYYY')}</td>
+                                <td width="50px"><Status label={profile.status} type={profile.status}/></td>
+                                <td><TablePopup id={profile.id} status={profile.status}/></td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+                {/* <TBody>
+ 
                     {
                         users?.map(({id, profile, createdAt})=>(
                             <TRow key={id}>
                                 <TData>{profile.company}</TData>
                                 <TData>{profile.username}</TData>
-                                <TData ellipsis>{profile.email}</TData>
-                                <TData>{profile.phoneNumber}</TData>
-                                <TData>{moment(createdAt).format('DD-MM-YYYY')}</TData>
-                                <TData><Status label={profile.status} type={profile.status}/></TData>
-                                <TData sx={{ flex:0.2}}><TablePopup id={profile.id} status={profile.status}/></TData>
+                                <TData width="250px">{profile.email}</TData>
+                                <TData width="150px">{profile.phoneNumber}</TData>
+                                <TData width="120px">{moment(createdAt).format('DD-MM-YYYY')}</TData>
+                                <TData width="50px"><Status label={profile.status} type={profile.status}/></TData>
+                                <TData><TablePopup id={profile.id} status={profile.status}/></TData>
                             </TRow>
                         ))
                     }
                     
-                </TBody>
-            </Table>
+                </TBody> */}
+            </table>
         </Card>
     )
 }

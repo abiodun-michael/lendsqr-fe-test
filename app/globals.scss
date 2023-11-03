@@ -52,3 +52,38 @@ img{
   transform: scale(0.9);
   transition: opacity 300ms, transform 300ms;
 }
+
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 30px;
+}
+
+tr{
+  height: 61px;
+}
+
+tr th{
+  font-family: $workSansFont;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: left;
+  height: 100%;
+}
+
+tr:not(:last-child) td{
+  border-bottom: 1px solid rgba(33, 63, 125, 0.10);
+}
+
+tr td{
+  font-family: $workSansFont;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+

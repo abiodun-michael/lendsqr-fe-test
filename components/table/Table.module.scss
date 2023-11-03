@@ -4,15 +4,16 @@
 
 .table{
     width: 100%;
+   
     
     .table-header{
         @include flexbox(center);
         width: 100%;
         margin-bottom: 15px;
-        gap:35px;
-        
+        // gap:25px;
+
         .th{
-            flex: 1;
+            flex: 1 0;
             color: $textColor;
             font-family: $workSansFont;
             font-size: 0.857rem;
@@ -20,9 +21,17 @@
             font-weight: 600;
             line-height: normal;
             text-transform: uppercase;
-            @include flexbox(center);
-            gap:8px;
             position: relative;
+            // align-self: flex-start;
+                overflow-wrap: break-word;
+                overflow: auto;
+                text-wrap: wrap;
+           
+
+            .th-inner{
+                @include flexbox(center);
+                gap:10px;
+            }
 
             .filter{
                 width: 270px;
@@ -35,6 +44,8 @@
     }
 
     .tbody{
+        width: 100%;
+        
 
         & .trow:not(:last-child){
             border-bottom:1px solid rgba(33, 63, 125, 0.10);
@@ -43,23 +54,21 @@
         .trow{
             @include flexbox(center);
             height: 61px;
-            gap:35px;
-
+            width: 100%;
+        //    gap:25px;
 
             .tdata{
-                @include flexbox(center);
                 height: 100%;
-                flex:1;
+                flex: 1 0;
                 font-family: $workSansFont;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-
-                &.ellipsis{
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                }
+                // align-self: flex-start;
+                @include flexbox(center);
+                overflow-wrap: break-word;
+                overflow: auto;
+                text-wrap: wrap;
             }
         }
     }

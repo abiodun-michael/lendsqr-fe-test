@@ -9,10 +9,11 @@ import { CSSTransition } from 'react-transition-group';
 
 interface Props extends PropsWithChildren<{}>{
     sx?:React.CSSProperties,
-    renderFilter?:React.ReactNode
+    renderFilter?:React.ReactNode,
+    width?:string
 }
 
-const Th:React.FC<Props> = ({children,sx, renderFilter})=>{
+const Th:React.FC<Props> = ({children,sx, width=0,renderFilter})=>{
     const [openModal, setOpenModal] = useState(false)
 
     const ref = useRef<HTMLDivElement>(null)
@@ -36,8 +37,10 @@ const Th:React.FC<Props> = ({children,sx, renderFilter})=>{
       }, []);
 
     return(
-        <div className={styles.th} style={sx}>
+        <div className={styles.th} style={{...sx,minWidth:width}}>
+            <div className={styles['th-inner']}>
             {children} {renderFilter && <Icon onClick={()=>setOpenModal(!openModal)} name='filter' width='16px' height='16px'/>}
+            </div>
             <CSSTransition
                 nodeRef={ref}
                 in={openModal}

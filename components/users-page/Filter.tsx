@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react"
 import DateField from "../widgets/date/Index"
 import Select from "../widgets/select"
 import { Users } from "@/utils/types"
+import Popup from "../popup/Popup"
 
 const inputStyle = {height:40, borderRadius:8,outline:0, borderWidth:1}
 const buttonStyle = {width:98, height:40, borderRadius:8}
@@ -60,7 +61,7 @@ export const OrganizationFilter:React.FC<Props> = ({users})=>{
 
 
     return (
-        <>
+        <Popup width="270px" position="left" icon={{name:"filter", width:16, height:16}}>
         <Select 
             inputSx={inputStyle}
             placeholder="Organization" 
@@ -75,7 +76,7 @@ export const OrganizationFilter:React.FC<Props> = ({users})=>{
             <Button onClick={handleFilter} variant="contained" sx={buttonStyle}>Filter</Button>
         </div>
             
-        </>
+        </Popup>
     )
 }
 
@@ -121,7 +122,7 @@ export const UsernameFilter = ()=>{
     },[])
 
     return (
-        <>
+        <Popup width="270px" icon={{name:"filter", width:16, height:16}}>
         <TextField inputSx={inputStyle}
             placeholder="User" 
             label="Username"
@@ -132,7 +133,7 @@ export const UsernameFilter = ()=>{
             <Button onClick={handleReset} sx={buttonStyle}>Reset</Button>
             <Button onClick={handleFilter} variant="contained" sx={buttonStyle}>Filter</Button>
         </div>
-        </>
+        </Popup>
     )
 }
 
@@ -178,7 +179,7 @@ export const EmailFilter = ()=>{
     },[])
 
     return (
-        <>
+        <Popup width="270px" icon={{name:"filter", width:16, height:16}}>
         <TextField inputSx={inputStyle}
             placeholder="Email" 
             label="Email"
@@ -189,7 +190,7 @@ export const EmailFilter = ()=>{
             <Button onClick={handleReset} sx={buttonStyle}>Reset</Button>
             <Button onClick={handleFilter} variant="contained" sx={buttonStyle}>Filter</Button>
         </div>   
-        </>
+        </Popup>
     )
 }
 
@@ -236,7 +237,7 @@ export const PhoneNumberFilter = ()=>{
 
 
     return (
-        <>
+        <Popup width="270px" icon={{name:"filter", width:16, height:16}}>
         <TextField inputSx={inputStyle}
             placeholder="Phone Number" 
             label="Phone Number"
@@ -248,7 +249,7 @@ export const PhoneNumberFilter = ()=>{
             <Button onClick={handleReset} sx={buttonStyle}>Reset</Button>
             <Button onClick={handleFilter} variant="contained" sx={buttonStyle}>Filter</Button>
         </div>   
-        </>
+        </Popup>
     )
 }
 
@@ -294,7 +295,7 @@ export const DateJoinedFilter = ()=>{
     },[])
 
     return (
-        <>
+        <Popup width="270px" icon={{name:"filter", width:16, height:16}}>
         <DateField 
             label="Date"
             placeholder="Date"
@@ -305,7 +306,7 @@ export const DateJoinedFilter = ()=>{
             <Button onClick={handleReset} sx={buttonStyle}>Reset</Button>
             <Button onClick={handleFilter} variant="contained" sx={buttonStyle}>Filter</Button>
         </div>   
-        </>
+        </Popup>
     )
 }
 
@@ -358,7 +359,7 @@ export const StatusFilter = ()=>{
     },[])
 
     return (
-        <>
+        <Popup position="right" width="270px" icon={{name:"filter", width:16, height:16}}>
         <Select inputSx={inputStyle}
             placeholder="Status" 
             label="Status"
@@ -370,6 +371,6 @@ export const StatusFilter = ()=>{
             <Button onClick={handleReset} sx={buttonStyle}>Reset</Button>
             <Button onClick={handleFilter} variant="contained" sx={buttonStyle}>Filter</Button>
         </div> 
-        </>
+        </Popup>
     )
 }

@@ -28,6 +28,15 @@
 
     li.menu-item{
         height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .menu-item-icon-wrapper{
+            padding-right: 47px;
+            display: flex;
+            align-items: center
+        }
         
         a{
             @extend %align-flex;
@@ -37,10 +46,10 @@
             color: $secondaryColor !important;
             font-family: $workSansFont;
             font-size: 1.143rem;
-            opacity: 0.4;
+            opacity: 0.6;
             border-left: 3px solid transparent;
 
-            &:hover{
+            &:hover, &.active{
                 opacity: 1;
                 background-color: rgba(57, 205, 204, 0.06);
                 border-left-color: $primaryColor;
