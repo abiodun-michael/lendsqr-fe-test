@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import styles from './button.module.scss'
+import styles from './Button.module.scss'
 
 
 type Variants = 'outlined'| 'contained'

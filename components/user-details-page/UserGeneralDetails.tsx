@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react"
-import Card from "../card"
-import styles from './user-details-page.module.scss'
+import Card from "../card/Card"
+import styles from './UserDetailsPage.module.scss'
 import { Users } from "@/utils/types"
 
 const cardStyle = {

@@ -1,4 +1,4 @@
-import styles from './menu.module.scss'
+import styles from './Menu.module.scss'
 import { ComponentProps } from 'react'
 
 type MenuProps = ComponentProps<"ul">

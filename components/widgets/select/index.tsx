@@ -1,7 +1,7 @@
 import { ComponentProps, useEffect, useId, useRef, useState } from 'react'
 import styles from './Select.module.scss'
 import Icon from '@/icons'
-import Card from '@/components/card'
+import Card from '@/components/card/Card'
 import { CSSTransition } from 'react-transition-group'
 
 

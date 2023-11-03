@@ -1,2 +1,2 @@
-export {default as Button} from './button'
-export {default as TextField} from './input'
+export {default as Button} from './button/Button'
+export {default as TextField} from './textfield/TextField'

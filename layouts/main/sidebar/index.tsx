@@ -1,6 +1,6 @@
 import { Menu, MenuGroup, MenuItem } from '../menu'
-import { LogoutMenuItem } from '../menu/menu-item'
-import styles from './sidebar.module.scss'
+import { LogoutMenuItem } from '../menu/MenuItem'
+import styles from './Sidebar.module.scss'
 
 
 const Sidebar = ()=>{

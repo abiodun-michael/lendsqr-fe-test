@@ -1,5 +1,5 @@
 import React, {memo, useEffect, useState } from 'react'
-import styles from './tabs.module.scss'
+import styles from './Tabs.module.scss'
 
 type IconType = {
     name:string,
@@ -9,7 +9,7 @@ type IconType = {
 type TabItemType = {
     icon?:IconType,
     label:string,
-    tabKey:string | number
+    tabKey:string
 }
 
 type TabsProps = {

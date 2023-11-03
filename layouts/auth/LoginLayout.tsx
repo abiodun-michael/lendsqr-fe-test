@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import styles from './login.module.scss'
+import styles from './Login.module.scss'
 
 type LayoutProps = ComponentProps<"div">
 

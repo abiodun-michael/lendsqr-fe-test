@@ -1,9 +1,9 @@
 'use client'
 
 import { PropsWithChildren, useRef, useState, useEffect } from 'react'
-import styles from './table.module.scss'
+import styles from './Table.module.scss'
 import Icon from '@/icons'
-import Card from '../card'
+import Card from '../card/Card'
 import { CSSTransition } from 'react-transition-group';
 
 

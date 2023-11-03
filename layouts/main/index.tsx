@@ -2,7 +2,7 @@
 
 import Sidebar from "./sidebar"
 import styles from './Main.module.scss'
-import Header from "./header"
+import Header from "./header/Header"
 import Icon from "@/icons"
 import { useRouter } from "next/navigation"
 

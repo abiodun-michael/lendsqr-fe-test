@@ -1,4 +1,4 @@
-import styles from './user-details-page.module.scss'
+import styles from './UserDetailsPage.module.scss'
 import { Button } from '../widgets'
 import React from 'react'
 import { Users } from '@/utils/types'

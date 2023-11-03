@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState, memo } from "react"
-import UserAnalytics from "./user-analytics"
-import UserList from "./user-list"
+import UserAnalytics from "./UserAnalytics"
+import UserList from "./UserList"
 import axios from "axios"
 import { Strings } from "@/utils/constants"
 import { Users } from "@/utils/types"

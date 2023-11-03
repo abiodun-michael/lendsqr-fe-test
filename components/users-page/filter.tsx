@@ -2,7 +2,7 @@
 
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
 import { Button, TextField } from "../widgets"
-import styles from './user-page.module.scss'
+import styles from './UserPage.module.scss'
 import React, { useEffect, useState } from "react"
 import DateField from "../widgets/date/Index"
 import Select from "../widgets/select"

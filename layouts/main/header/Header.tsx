@@ -1,6 +1,6 @@
-import styles from './header.module.scss'
-import Navigation from './navigation'
-import Search from './search'
+import styles from './Header.module.scss'
+import Navigation from './Navigation'
+import Search from './Search'
 
 
 const Header = ()=>{

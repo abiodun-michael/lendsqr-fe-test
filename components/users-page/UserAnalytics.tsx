@@ -1,5 +1,5 @@
 import React,{memo} from "react"
-import AnalyticsCard, { AnalyticsCardGroup } from "../analytics-card"
+import AnalyticsCard, { AnalyticsCardGroup } from "../analytics-card/AnalyticsCard"
 import { Users } from "@/utils/types"
 
 interface IAnalytics {

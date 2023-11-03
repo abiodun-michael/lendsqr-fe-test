@@ -1,9 +1,9 @@
 'use client'
 
 import Icon from "@/icons"
-import Card from "../card"
+import Card from "../card/Card"
 import styles from './analytics-card.module.scss'
-import useScreenSize from "@/hooks/use-screen-size"
+import useScreenSize from "@/hooks/useScreenSize"
 
 type AnalyticsCardProps = {
     bg:string,

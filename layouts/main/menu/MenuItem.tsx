@@ -1,4 +1,4 @@
-import styles from './menu.module.scss'
+import styles from './Menu.module.scss'
 import Link from 'next/link'
 import Icon from '@/icons'
 

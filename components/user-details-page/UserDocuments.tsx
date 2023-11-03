@@ -1,4 +1,4 @@
-import Card from "../card"
+import Card from "../card/Card"
 
 const cardStyle = {
     padding:30

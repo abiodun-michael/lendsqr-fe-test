@@ -1,9 +1,9 @@
 'use client'
 
-import { ComponentProps, useId, useState } from 'react'
-import styles from './input.module.scss'
+import React, { ComponentProps, useId, useState } from 'react'
+import styles from './Input.module.scss'
 
-type InputProps = ComponentProps<'input'> & {
+type TextFieldProps = ComponentProps<'input'> & {
     label?:string,
     sx?: React.CSSProperties,
     marginTop?:string,
@@ -13,9 +13,9 @@ type InputProps = ComponentProps<'input'> & {
     inputSx?:React.CSSProperties
 }
 
-const TextField = ({label,sx,inputSx,type="text",
+const TextField:React.FC<TextFieldProps> = ({label,sx,inputSx,type="text",
         marginBottom,marginLeft,marginTop,marginRight,
-    ...rest}:InputProps)=>{
+    ...rest})=>{
         const [hidePassword, setHidePassword] = useState(true)
 
         const inputType = type === 'password' && hidePassword ? 'password': type === 'password' && !hidePassword ? 'text': type

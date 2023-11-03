@@ -1,6 +1,6 @@
 import { Button, TextField } from '@/components/widgets'
-import styles from './header.module.scss'
-import SearchIcon from '@/icons/search'
+import styles from './Header.module.scss'
+import SearchIcon from '@/icons/Search'
 
 const Search = ()=>{
 

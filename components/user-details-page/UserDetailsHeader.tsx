@@ -1,11 +1,10 @@
 'use client'
 
 import { Users } from "@/utils/types"
-import Card from "../card"
-import Stars from "../star"
-import Tabs from "../tabs"
-import styles from './user-details-page.module.scss'
-import { useCallback, useState } from "react"
+import Card from "../card/Card"
+import Stars from "../star/Star"
+import Tabs from "../tabs/Tabs"
+import styles from './UserDetailsPage.module.scss'
 
 const cardStyle = {
     borderRadius: "4px",

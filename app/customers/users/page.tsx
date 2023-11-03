@@ -1,4 +1,4 @@
-import UsersPage from "@/components/users-page"
+import UsersPage from "@/components/users-page/Index"
 import { PageContainer } from "@/layouts/main"
 
 

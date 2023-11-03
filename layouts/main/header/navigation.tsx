@@ -1,7 +1,6 @@
 import Link from 'next/link'
-import styles from './header.module.scss'
-import Icon from '@/icons'
-import Popup from '@/components/popup'
+import styles from './Header.module.scss'
+import Popup from '@/components/popup/Popup'
 
 
 const Navigation = ()=>{

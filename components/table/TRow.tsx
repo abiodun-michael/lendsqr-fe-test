@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import styles from './table.module.scss'
+import styles from './Table.module.scss'
 
 
 type Props = PropsWithChildren<{}>

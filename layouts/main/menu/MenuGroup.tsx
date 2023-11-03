@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import styles from './menu.module.scss'
+import styles from './Menu.module.scss'
 
 type MenuGroupProps = ComponentProps<"div"> & {
     title: string
