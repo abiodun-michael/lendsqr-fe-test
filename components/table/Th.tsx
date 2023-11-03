@@ -15,7 +15,7 @@ interface Props extends PropsWithChildren<{}>{
 const Th:React.FC<Props> = ({children,sx, renderFilter})=>{
     const [openModal, setOpenModal] = useState(false)
 
-    const ref = useRef(null)
+    const ref = useRef<HTMLDivElement>(null)
 
     const cardStyle = {
         border: "1px solid rgba(84, 95, 125, 0.14)",
