@@ -36,12 +36,15 @@ import ActivateUserIcon from './ActivateUser'
 import ArrowLeftIcon from './ArrowLeft'
 import FilledStarsIcon from './FilledStar'
 import UnfilledStarsIcon from './UnfilledStar'
+import ChevronLeft from './ChevronLeft'
+import ChevronRight from './ChevronRight'
 
 type Props = {
     name:string,
     width?:string,
     height?:string,
-    onClick?: ()=>void
+    onClick?: ()=>void,
+    sx?:React.CSSProperties
 }
 const Icon = (props:Props)=>{
 
@@ -159,6 +162,12 @@ const Icon = (props:Props)=>{
                 break;
             case 'unfilled-star':
                 return <UnfilledStarsIcon {...rest}/>
+                break;
+            case 'chevron-left':
+                return <ChevronLeft {...rest}/>
+                break;
+            case 'chevron-right':
+                return <ChevronRight {...rest}/>
                 break;
             default:
                 return ""
