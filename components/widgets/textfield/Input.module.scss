@@ -1,0 +1,57 @@
+@import 'utils/variables';
+
+.input-wrapper{
+    position: relative;
+  
+    .label{
+        display: block;
+        margin-bottom: 6px;
+        font-family: $workSansFont;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: none;
+    }
+    
+    .input-field{
+        border-radius: 5px;
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        background: #FFF;
+        outline:2px solid transparent;
+        height:50px;
+        width: 100%;
+        padding:0px 16px;
+        color: $textColor;
+        font-family: $avenirFont;
+        opacity: 0.6;
+        transition: .350s all ease-in-out;
+
+        &:focus{
+            outline-color: $primaryColor;
+        }
+
+        &::-webkit-calendar-picker-indicator::after {
+            content:'';
+            display:block;
+            background:url('/calendar.svg') no-repeat;
+            background-size:11%;
+            width:100px;
+            height:100px;
+            position:absolute;
+            transform:translateX(-3%);
+         }
+    }
+
+    .password-toggle{
+        position: absolute;
+        right:20px;
+        top:18px;
+        font-size: 0.857rem;
+        font-family: $avenirFont;
+        font-weight:600;
+        letter-spacing: 1.2px;
+        color:$primaryColor;
+        cursor: pointer;
+        user-select: none;
+    }
+}

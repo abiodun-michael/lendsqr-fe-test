@@ -1,0 +1,59 @@
+@import 'utils/variables';
+@import 'utils/media-queries';
+
+
+.main{
+    display: grid;
+    grid-template-columns: 283px calc(100% - 283px);;
+    height: 100vh;
+
+    @include mobile{
+        grid-template-columns: 1fr;
+    }
+
+    .content{
+        height: 100vh;
+        overflow-y: auto;
+        padding-top: 160px;
+        padding-left: 60px;
+        padding-right: 60px;
+
+        @include mobile{
+            padding:20px;
+            padding-top: 90px;
+        }
+    }
+}
+
+
+.page-container{
+    height: 100%;
+
+    .page-container-title{
+        font-size: 1.714rem;
+        color: $secondaryColor;
+        margin-bottom: 40px;
+
+        @include mobile{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.page-container-sub-title{
+    font-family: $workSansFont;
+    font-size: 1.143rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap:13px;
+    margin-bottom: 26px;
+    cursor: pointer;
+    width: max-content;
+
+    @include mobile{
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,59 @@
+@import 'utils/variables';
+@import 'utils/media-queries';
+
+.main{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+
+    @include mobile{
+        grid-template-columns: 1fr;
+    }
+
+        .banner-container{
+            .logo{
+                margin-top:106px;
+                margin-left:97px;
+            }
+
+            .banner-image{
+                margin-top:139px;
+                margin-left:67px;
+                width:600px;
+                height:338px;
+            }
+
+            @include mobile{
+                display: none;
+            }
+        }
+
+        .form-container{
+            background: #FFF;
+            box-shadow: 0px 15px 90px 0px rgba(0, 0, 0, 0.03);
+            padding-left:100px;
+            padding-top:220px;
+            padding-right:157px;
+
+            @include mobile{
+                padding-top: 100px;
+                padding-left: 20px;
+                padding-right:20px;
+            }
+
+            .title{
+                font-family: $avenirFont;
+                font-size: 2.857rem;
+                font-size: 700;
+                letter-spacing: -0.114rem;
+                color: $secondaryColor;
+            }
+
+            .sub-text{
+                color: $textColor;
+                font-size:1.429rem;
+                font-weight: 400;
+                font-family: $avenirFont;
+            }
+        }
+    }

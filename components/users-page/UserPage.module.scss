@@ -1,0 +1,39 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+
+.filter-button-group{
+    @include flexbox(center,space-between);
+    margin-top:30px;
+}
+
+.table-popup-menu{
+    @include flexbox(normal, normal, column);
+    list-style: none;
+    gap:20px;
+
+    .popup-list{
+        @include flexbox(center);
+        font-family: $workSansFont;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        gap: 8px;
+        cursor: pointer;
+      }
+}
+
+
+.user-list-table{
+    // table-layout: fixed;
+    
+    width: 100%;
+}
+
+
+.table-header-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }

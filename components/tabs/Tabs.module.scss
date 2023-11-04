@@ -1,0 +1,25 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+.tabs{
+    list-style: none;
+    @include flexbox(center, space-between);
+
+    .tab-item{
+        padding: 0px 25px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid transparent;
+        color: rgba(0, 0, 0, 0.80);
+        font-family: $workSansFont;
+        font-size: 1.143rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        cursor: pointer;
+
+        &.active{
+            border-bottom-color:$primaryColor;
+        }
+    }
+}

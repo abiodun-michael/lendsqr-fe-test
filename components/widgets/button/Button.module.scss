@@ -1,0 +1,27 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+.button{
+    @include flexbox(center,center);
+    border-radius: 0.571rem;
+    height:3.429rem;
+    outline: none;
+    border: none;
+    border:1px solid transparent;
+    font-weight: 600;
+    padding:0px 2.143rem;
+    cursor: pointer;
+    
+    &.contained{
+        background-color: $primaryColor;
+        color: #fff;
+        border-color: $primaryColor;
+    }
+
+    &.outlined{
+        background-color: transparent;
+        color: $textColor;
+        border-color: $textColor;
+    }
+
+}

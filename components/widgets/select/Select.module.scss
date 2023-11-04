@@ -1,0 +1,71 @@
+@import 'utils/variables';
+
+
+.select{
+   position: relative;
+
+   .input-wrapper{
+    position: relative;
+  
+    .label{
+        display: block;
+        margin-bottom: 6px;
+        font-family: $workSansFont;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: none;
+    }
+    
+    .input-field{
+        border-radius: 5px;
+        border: 2px solid rgba(84, 95, 125, 0.15);
+        background: #FFF;
+        outline:2px solid transparent;
+        height:50px;
+        width: 100%;
+        padding:0px 16px;
+        color: $textColor;
+        font-family: $avenirFont;
+        opacity: 0.6;
+        transition: .350s all ease-in-out;
+
+        &:focus{
+            outline-color: $primaryColor;
+        }
+
+    }
+    .dropdown-icon{
+        position: absolute;
+        right: 20px;
+        bottom:10px;
+        cursor: pointer;
+    }
+}
+
+.dropdown{
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-height: 100px;
+
+    .list{
+        padding: 20px;
+        list-style: none;
+        
+
+        .li{
+            font-family: $workSansFont;
+            font-size: 14px;
+            font-style: normal;
+            text-transform: none;
+            font-weight: 500;
+            line-height: normal;
+            padding: 5px 0;
+        }
+    }
+}
+  
+}
+
+

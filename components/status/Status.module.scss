@@ -1,0 +1,35 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+.status{
+    @include flexbox(center,center);
+    min-width: 70px;
+    height: 30px;
+    border-radius: 100px;
+    font-family: $workSansFont;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 12px;
+    text-transform: capitalize;
+
+    &.inactive{
+        background-color: rgba(84, 95, 125, 0.06);
+        color:rgba(84, 95, 125, 1);
+    }
+
+    &.pending{
+        background-color: rgba(233, 178, 0, 0.1);
+        color:rgba(233, 178, 0, 1);
+    }
+
+    &.blacklisted{
+        background-color: rgba(228, 3, 59, 0.1);
+        color:rgba(228, 3, 59, 1)
+    }
+
+    &.active{
+        background-color:rgba(57, 205, 98, 0.06);
+        color:rgba(57, 205, 98, 1);
+    }
+}

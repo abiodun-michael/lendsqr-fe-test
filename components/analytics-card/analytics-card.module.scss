@@ -1,0 +1,59 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+@import 'utils/media-queries';
+
+
+.analytic-card-group{
+    @include flexbox(center);
+    gap: 25px;
+
+    @include mobile{
+        display: grid;
+        grid-template-columns: 150px 150px!important;
+        gap: 10px 20px;
+    }
+}
+
+
+.analytic-card-container{
+    padding: 20px 30px;
+
+    @include mobile{
+        padding: 20px 10px;
+        @include flexbox(center, center, column);
+    }
+
+
+    .analytics-icon-wrapper{
+        height: 40px;
+        width:40px;
+        border-radius: 50%;
+        @include flexbox(center, center);
+        margin-bottom:14px;
+    }
+
+    .analytics-label{
+        color: $textColor;
+        font-family: $workSansFont;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+
+        @include mobile{
+            font-size: 12px;
+        }
+
+    }
+
+    .analytics-data{
+        color: $secondaryColor;
+        font-family: $workSansFont;
+        font-size: 1.714rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+}

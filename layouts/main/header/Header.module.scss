@@ -1,0 +1,113 @@
+@import 'utils/variables';
+@import 'utils/media-queries';
+
+
+%align-flex{
+    display:flex;
+    align-items: center;
+}
+
+.header{
+    height:100px;
+    background-color: white;
+    box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+
+    @include mobile{
+        height: 70px;
+    }
+
+
+    @extend %align-flex;
+    justify-content: space-between;
+    z-index: 22;
+
+    .logo-wrapper{
+        display: flex;
+        gap:168px;
+
+        input{
+            font-family: $workSansFont;
+        }
+
+        .logo{
+            width: 145px;
+            height: 30px;
+            margin-left: 30px;
+
+            @include mobile{
+                height: auto;
+                width: 100px;
+                margin-left: 20px;
+            }
+        }
+    }
+
+   
+}
+
+.search-wrapper{
+    @extend %align-flex;
+
+    @include mobile{
+        display: none;
+    }
+}
+
+
+.nav{
+    @extend %align-flex;
+    height:100%;
+    padding-right:60px;
+
+    ul{
+        @extend %align-flex;
+        list-style: none;
+        gap:30px;
+
+        @include mobile{
+            display: none;
+        }
+
+        li{
+            
+            font-family: $robotoFont;
+            font-size: 1.143rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-decoration-line: underline;
+            color: $secondaryColor;
+
+            a{
+                text-decoration: underline;
+                margin-right: 17px;
+            }
+
+            &.avatar{
+                @extend %align-flex;
+                text-decoration: none;
+                gap: 10px;
+                cursor: pointer;
+
+                img{
+                    width: 48px;
+                    height:48px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+
+                .avatar-desc{
+                    @extend %align-flex;
+                    gap:4px;
+                    font-family: $workSansFont;
+                    font-weight: 500;
+                }
+                
+            }
+        }
+    }
+}

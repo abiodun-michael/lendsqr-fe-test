@@ -1,0 +1,143 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+.user-details-container{
+
+    .user-detailes-top{
+        @include flexbox(center, space-between);
+
+        .user-details-page-title{
+            color: $secondaryColor;
+            font-family: $workSansFont;
+            font-size: 1.714rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+          
+        }
+    }
+}
+
+
+.user-details-header{
+    @include flexbox(center);
+
+    .avatar{
+        margin-right: 20px;
+    }
+
+    .user-details-name{
+        @include flexbox(normal, center, column);
+        gap: 8px;
+        border-right: 1px solid rgba(84, 95, 125, 0.2);
+        padding-right: 30px;
+        height: 80px;
+
+        .user-details-name-main{
+            color: $secondaryColor;
+            font-family: $workSansFont;
+            font-size: 1.571rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .user-details-name-sub{
+            font-family: $workSansFont;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+    .user-details-tier{
+        @include flexbox(center,center,column);
+        width: 133px;
+        border-right: 1px solid rgba(84, 95, 125, 0.2);
+        gap:10px;
+        height: 80px;
+
+        .user-details-tier-label{
+            font-family: $workSansFont;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+
+    .user-details-account-info{
+        padding-left:30px;
+        @include flexbox(normal,center,column);
+        gap:12px;
+
+        .user-details-account-balance{
+            color: $secondaryColor;
+            font-family: $workSansFont;
+            font-size: 1.571rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .user-details-account-number{
+            color: $secondaryColor;
+            font-family: $workSansFont;
+            font-size: 0.857rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}
+
+
+
+.general-detail-section{
+
+    .general-detail-section-title{
+        color: $secondaryColor;
+        font-family: $workSansFont;
+        font-size: 1.143rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .general-detail-section-grid{
+        display: grid;
+        margin-top: 30px;
+        gap: 30px 30px;
+
+        .general-detail-section-grid-items{
+            @include flexbox(normal, normal, column);
+            gap:8px;
+
+            .general-detail-section-grid-items-h5{
+                font-family: $workSansFont;
+                font-size: 0.857rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+
+            .general-detail-section-grid-items-p{
+                font-family: $workSansFont;
+                font-size: 1.143rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+.section-divider{
+    margin-top:30px;
+    margin-bottom: 30px;
+    height: 1px;
+    background-color: rgba(33, 63, 125, 0.1)
+}
