@@ -4,6 +4,12 @@ This is a frontend assessment for the frontend role at Lendsqr.
 
 <a href="https://abiodun-michael-lendsqr-fe-test.vercel.app/">Live Demo</a>
 
+## Pages:
+
+<a href="https://abiodun-michael-lendsqr-fe-test.vercel.app/">Login</a>
+
+<a href="https://abiodun-michael-lendsqr-fe-test.vercel.app/customers/users">Users Page</a>
+
 ## Stack Used:
 
 React, NextJs, TypeScript, SCSS
