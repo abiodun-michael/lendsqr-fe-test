@@ -1,9 +1,14 @@
+'use client'
+
 import Link from "next/link"
 import { Button, TextField } from "../widgets"
 import styles from './index.module.scss'
+import {useRouter} from 'next/navigation'
 
 
 const LoginForm = ()=>{
+
+    const router = useRouter()
 
     return(
         <div className={styles['login-form-container']}>
@@ -17,7 +22,7 @@ const LoginForm = ()=>{
                 marginBottom="24px" 
                 placeholder="Password"/>
             <Link href="#">FORGOT PASSWORD?</Link>
-            <Button sx={{marginTop:"30px"}} block variant="contained">LOGIN IN</Button>
+            <Button onClick={()=>router.replace('/customers/users')} sx={{marginTop:"30px"}} block variant="contained">LOGIN IN</Button>
         </div>
     )
 }
